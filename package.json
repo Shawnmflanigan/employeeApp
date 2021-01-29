@@ -1,0 +1,23 @@
+{
+  "name": "employeeapp",
+  "version": "1.0.0",
+  "description": "A command line application to render employees on an easy to read html page.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shawnmflanigan/employeeApp.git"
+  },
+  "author": "Shawn Flanigan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shawnmflanigan/employeeApp/issues"
+  },
+  "homepage": "https://github.com/Shawnmflanigan/employeeApp#readme"
+}

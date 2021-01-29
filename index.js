@@ -1,7 +1,7 @@
 // Modules
-/* const Manager = require("./lib/manager");
+const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
-const Intern = require("./lib/intern"); */
+const Intern = require("./lib/intern");
 
 
 // NPM Packages
@@ -33,7 +33,7 @@ const allEmployees = async (inputs =[]) => {
             message: "Please enter the employee's e-mail address.",
         },
         {
-            name: "GitHub",
+            name: "gitHub",
             type: "input",
             message: "What is the engineer's gitHub url?",
             when: (answers => answers.role === "Engineer"),
@@ -45,7 +45,7 @@ const allEmployees = async (inputs =[]) => {
             when: (answers => answers.role === "Intern"),
         },
         {
-            name: "Office_Number",
+            name: "officeNumber",
             type: "input",
             message: "What is the Managers office number?",
             when: (answers => answers.role === "Manager"),
@@ -55,7 +55,7 @@ const allEmployees = async (inputs =[]) => {
             type: "confirm",
             message: "Would you like to add another employee?",
             default: true
-        }    
+        },   
     ];
 // Add recursive loop
     const {again, ...answers } = await inquirer.prompt(questions);
@@ -66,17 +66,23 @@ const allEmployees = async (inputs =[]) => {
 // Function to generate data
 const init = async () => {
     const inputs = await allEmployees ();
-    console.log(inputs);
 
     // Reference each employee class
-    inputs.forEach(Employee => {
-        console.log ("You have added a " + Employee.role + "with the following:" + Employee.name);
+    inputs.forEach(newEmployee => {
+        const newManager = new Manager(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.officeNumber);
+
+        const newEngineer = new Engineer(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.gitHub);
+
+        const newIntern = new Intern(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.school)
+
+        console.log(newEmployee);
+
     });
 
 }
-
-init();
 // Calling the function
+init();
+
 
 
 
