@@ -2,6 +2,9 @@
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
+const newMan = require("./src/manager");
+const newInt = require("./src/intern");
+const newEng = require("./src/engineer");
 
 
 // NPM Packages
@@ -69,14 +72,20 @@ const init = async () => {
 
     // Reference each employee class
     inputs.forEach(newEmployee => {
-        const newManager = new Manager(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.officeNumber);
-
-        const newEngineer = new Engineer(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.gitHub);
-
-        const newIntern = new Intern(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.school)
-
-        console.log(newEmployee);
-
+        if (newEmployee.role === "Manager") {
+            const newManager = new Manager(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.officeNumber);
+            newMan(newManager)
+            console.log(newMan(newManager));
+        } else if (newEmployee.role === "Engineer") {
+            const newEngineer = new Engineer(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.gitHub);
+            newEng(newEngineer)
+            console.log(newEng(newEngineer))
+        }
+        else {
+            const newIntern = new Intern(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.school)
+            newInt(newIntern)
+            console.log(newInt(newIntern))
+        }
     });
 
 }
