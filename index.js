@@ -82,7 +82,7 @@ const init = async () => {
             console.log(newEng(newEngineer))
         }
         else {
-            const newIntern = new Intern(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.school)
+            const newIntern = new Intern(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.School)
             newInt(newIntern)
             console.log(newInt(newIntern))
         }

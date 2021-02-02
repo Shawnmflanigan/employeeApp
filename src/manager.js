@@ -4,9 +4,9 @@ const Manager = require("../lib/manager");
   <div class="newEmp">
     <h2>${Manager.getRole()}<h2>
     <p>${Manager.getName()}</p>
-    <p>${Manager.getID()}</p>
-    <p>$${Manager.getEmail()}
-    <p>${Manager.getofficeNumber()}</p>
+    <p>ID: ${Manager.getID()}</p>
+    <p>Email: ${Manager.getEmail()}<p>
+    <p>OfficeNumber: ${Manager.getofficeNumber()}</p>
    </div>
    `;
 
