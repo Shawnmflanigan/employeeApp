@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/Shawnmflanigan/employeeApp/issues"
   },
-  "homepage": "https://github.com/Shawnmflanigan/employeeApp#readme"
+  "homepage": "https://github.com/Shawnmflanigan/employeeApp#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.0.0"
+  }
 }

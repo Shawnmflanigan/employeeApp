@@ -3,10 +3,10 @@ const Intern = require("../lib/Intern");
  const newIntern = (Intern) => `
   <div class="column is-one-quarter box">
     <h2 class="subtitle">Intern<h2>
-    <p>${Intern.getName()}</p>
+    <p>Name: ${Intern.getName()}</p>
     <p>ID: ${Intern.getID()}</p>
     <p>Email: ${Intern.getEmail()}</p>
-    <p>GitHub: ${Intern.getSchool()}</p>
+    <p>School: ${Intern.getSchool()}</p>
    </div>
    `;
 
