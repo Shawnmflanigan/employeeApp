@@ -1,0 +1,14 @@
+.box {
+    padding-top: 2px;
+    margin: .75rem;
+}
+
+body {
+    background-color: darkgrey;
+}
+
+h2 {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}

@@ -76,24 +76,26 @@ const init = async () => {
     function renderPage() {
         const html = `<!DOCTYPE html>
         <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Employee List</title>
         
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma-rtl.min.css">
-            <script src="../index.js"></script>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Employee List</title>
+          <link rel="stylesheet" href="./style.css">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma-rtl.min.css">
+          <script src="../index.js"></script>
         </head>
+        
         <body>
-            <section class="hero">
-                <div class="hero-body is-primary">
-                  <p class="title">
-                    Employee List
-                  </p>
-                </div>
-            </section>
-
-            <div class = 'newEmployee'>
+          <section class="hero is-small is-link">
+            <div class="hero-body mb-2">
+              <p class="title has-text-centered">
+                Team tracker
+              </p>
+            </div>
+          </section>
+        
+         <div class="columns is-centered mt-2 is-multiline is-3 employees">
                 `
         fs.writeFile('./dist/index.html', html, function (err) {
             if (err) {
@@ -104,7 +106,7 @@ const init = async () => {
     renderPage();
 
     // Reference each employee class and append to html
-    inputs.forEach(newEmployee => {
+    await inputs.forEach(newEmployee => {
         if (newEmployee.role === "Manager") {
             const newManager = new Manager(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.officeNumber);
             newMan(newManager)
@@ -126,21 +128,28 @@ const init = async () => {
             const newIntern = new Intern(newEmployee.name, newEmployee.id, newEmployee.email, newEmployee.School)
             newInt(newIntern)
             fs.appendFile('./dist/index.html', newInt(newIntern), function (err) {
-                if (err) throw err;
+                if (err)
+                    throw err;
                 console.log('Saved!');
-              });
+            });
             console.log(newInt(newIntern))
         }
     });
-
-    fs.appendFile('./dist/index.html', `  
+    
+    await fs.promises.appendFile ('./dist/index.html', `  
     </div>
-    </body>
+    </body> 
     </html>`, function (err) {
-        if (err) throw err;
-      });
-    console.log('end html')
+        if (err)
+            throw err;
+
+    });
+    console.log('end html');
 }
+
+
+// endHtml
+    
 // Calling the function
 init();
 

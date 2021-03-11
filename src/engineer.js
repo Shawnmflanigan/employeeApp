@@ -1,8 +1,8 @@
 const Engineer = require("../lib/Engineer");
 
  const newEng = (Engineer) => `
-  <div class="tile is-4">
-    <h2>Engineer<h2>
+  <div class="column is-one-quarter box">
+  <h2 class="subtitle">Engineer<h2>
     <p>${Engineer.getName()}</p>
     <p>ID: ${Engineer.getID()}</p>
     <p>Email: ${Engineer.getEmail()}</p>

@@ -1,8 +1,8 @@
 const Manager = require("../lib/manager");
 
  const newMan = (Manager) => `
-  <div class="tile is-4">
-    <h2>${Manager.getRole()}<h2>
+ <div class="column is-one-quarter box">
+    <h2 class="subtitle">${Manager.getRole()}<h2>
     <p>${Manager.getName()}</p>
     <p>ID: ${Manager.getID()}</p>
     <p>Email: ${Manager.getEmail()}</p>
